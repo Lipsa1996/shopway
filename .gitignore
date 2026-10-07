@@ -1,0 +1,42 @@
+# ==============================
+# IntelliJ IDEA
+# ==============================
+.idea/
+*.iml
+
+# ==============================
+# Maven
+# ==============================
+target/
+
+# ==============================
+# Environment / secrets
+# ==============================
+.env
+.env.*
+!.env.example
+
+# Local Spring configuration
+application-local.properties
+application-local.yml
+application-*.local.properties
+application-*.local.yml
+
+# ==============================
+# Node / Angular
+# ==============================
+node_modules/
+dist/
+.angular/
+.cache/
+
+# ==============================
+# OS
+# ==============================
+.DS_Store
+
+# ==============================
+# Logs
+# ==============================
+*.log
+logs/
