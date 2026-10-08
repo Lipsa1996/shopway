@@ -26,5 +26,15 @@ pipeline {
                 }
             }
         }
+
+        stage('SonarQube Analysis') {
+            steps {
+                withEnv(["JAVA_HOME=${tool 'Java-25'}"]) {
+                    withSonarQubeEnv('SonarQube') {
+                        sh './mvnw sonar:sonar -Dsonar.projectKey=Shopway'
+                    }
+                }
+            }
+        }
     }
 }
