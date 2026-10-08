@@ -15,8 +15,6 @@ import java.util.List;
 @AllArgsConstructor
 public class Cart {
 
-    private String userId;
-
     @Builder.Default
     private List<CartItem> items = new ArrayList<>();
 
@@ -26,7 +24,9 @@ public class Cart {
                 .map(item ->
                         item.getPrice()
                                 .multiply(
-                                        BigDecimal.valueOf(item.getQuantity())
+                                        BigDecimal.valueOf(
+                                                item.getQuantity()
+                                        )
                                 )
                 )
                 .reduce(
@@ -42,3 +42,4 @@ public class Cart {
                 .sum();
     }
 }
+

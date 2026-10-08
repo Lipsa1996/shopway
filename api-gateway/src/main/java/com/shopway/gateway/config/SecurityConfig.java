@@ -59,7 +59,10 @@ public class SecurityConfig {
                         // Public authentication endpoints
                         .requestMatchers(
                                 "/api/auth/**",
-                                "/actuator/health"
+                                "/actuator/health",
+                                "/api/catalog/**",
+                                "/api/cart/guest",
+                                "/api/cart/guest/**"
                         ).permitAll()
 
                         // Admin endpoints
@@ -79,11 +82,9 @@ public class SecurityConfig {
                         )
 
                         // Catalog endpoints
-                        .requestMatchers(
-                                "/api/catalog/**"
-                        )
-                        .authenticated()
-
+//                        .requestMatchers(
+//                                "/api/catalog/**"
+//                        )
                         // Everything else
                         .anyRequest()
                         .authenticated()
