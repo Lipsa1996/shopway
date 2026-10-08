@@ -17,7 +17,12 @@ pipeline {
                         variable: 'JWT_SECRET'
                     )
                 ]) {
-                    sh './mvnw clean verify'
+                    withEnv(["JAVA_HOME=${tool 'Java-25'}"]) {
+                        sh '''
+                            java -version
+                            ./mvnw clean verify
+                        '''
+                    }
                 }
             }
         }
